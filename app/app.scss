@@ -1,22 +1,25 @@
 $black: black;
 $limegreen: lime;
-$blackish: rgb(6, 39, 58);
+$blackish: rgb(10, 46, 66);
 $white: white;
 $grayish: rgb(76, 83, 116);
-$lightblue: rgb(80, 126, 173);
+$lightblue: dodgerblue;
 $grayFont: rgb(145, 182, 173);
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400&display=swap');
 
 *{
   padding: 0;
   margin: 0;
   box-sizing: border-box;
-  font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  font-family: 'Roboto', sans-serif;
   text-decoration: none;
+  color: $blackish;
 }
 body{
   min-height: 100vh;
   display: grid;
-  grid-template-rows: 60px 1fr 100px;
+  grid-template-rows: min(60px) 1fr 100px;
+  overflow-x: hidden;
 
   next-route-announcer{
     display: none;
@@ -33,12 +36,14 @@ body{
     padding: .7rem 1.8rem;
     color: $white;
     background: $limegreen;
+    font-size: 1rem;
   }
 
   input{
     outline: 1px solid $blackish;
     border: none;
     padding: .7rem 1.0rem;
+    font-size: 1rem;
 
     &:focus{
       outline: 2px solid $lightblue;
@@ -55,6 +60,8 @@ header{
   justify-content: flex-end;
   padding-inline: 1rem;
   gap: 1rem;
+  background: $white;
+  z-index: 4;
 
   .logo{
     margin-right: auto;
@@ -62,17 +69,95 @@ header{
     font-weight: bold;
     color: $limegreen;
   }
+
+  .sidebar-btn{
+    padding: .6rem;
+    cursor: pointer;
+    border-radius: 50%;
+    width: 40px;
+    display: grid;
+    place-items: center;
+    background: rgba(128, 128, 128, .3);
+
+    &:hover{
+      background: rgba(128, 128, 128, .45);
+    }
+  }
 }
 main{
-  padding: 2rem;
+  min-height: calc(100vh - 60px);
+  position: relative;
+  display: flex;
+
+  section{
+    flex: 1;
+
+    .main-img{
+      border-radius: 1rem;
+      object-fit: cover;
+      width: 40%;
+      aspect-ratio: 16 / 9;
+      box-shadow: 0px 0px 15px 9px rgba(0, 0,0,0.25);
+    }
   
-  img{
-    border-radius: 1rem;
-    object-fit: cover;
-    // width: 600px;
-    width: 40%;
-    aspect-ratio: 16 / 9;
-    box-shadow: 0px 0px 15px 9px rgba(0, 0,0,0.25);
+    .search-results{
+      display: grid;
+      grid-auto-rows: 320px;
+      grid-template-columns: repeat(auto-fit, 250px);
+      gap: 1.2rem;
+      justify-content: center;
+      margin-top: 1rem;
+  
+      .children{
+        border-radius: .8rem;
+        box-shadow: 0px 0px 10px 3px rgba(0, 0,0,0.25);
+        display: grid;
+        grid-template-rows: auto 1fr;
+        overflow: hidden;
+  
+        img{
+          width: 100%;
+          aspect-ratio: 1 / 1;
+          object-fit: cover;
+          border-radius: .8rem .8rem 0rem 0;
+          transition: transform .35s ease-in-out;
+  
+          &:hover{
+            transform: scale(1.1);
+          }
+        }
+        .card-info{
+          z-index: 2;
+          border-radius: 0 0rem .8rem .8rem;
+          display: grid;
+          padding: .5rem;
+          place-items: center;
+          border-bottom: 2px solid $limegreen;
+          background: $white;
+  
+          h3{
+            text-align: center;
+          }
+        }
+      }
+    }
+  }
+
+  .showAside{
+    transform: translateX(310px);
+  }
+  aside{
+    transition: transform .24s ease-in-out;
+    position: absolute;
+    height: 100%;
+    right: 0;
+    z-index: 3;
+    width: clamp(10%, 100%, 310px);
+    background: $blackish;
+
+    p{
+      color: $white;
+    }
   }
 }
 footer{
@@ -85,5 +170,12 @@ footer{
 
   p, a{
     color: $grayFont;
+  }
+}
+
+@media only screen and (max-width: 500px) {
+  header{
+    flex-wrap: wrap;
+    min-height: 60px;
   }
 }
