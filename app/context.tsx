@@ -1,14 +1,15 @@
 'use client'
-import { createContext } from "react"
+import { createContext, useState } from "react"
 
-export const Data = createContext({hi: 'hi'});
+export const Data = createContext({});
 
 export default function Context({children}: any) {
-    const value = {hi: 'hi'};
+  const [loggedIn, setLoggedIn] = useState<boolean>(false)
+  const value = {loggedIn, setLoggedIn};
 
   return (
     <Data.Provider value={value}>
-        {children}
+      {children}
     </Data.Provider>
   )
 }

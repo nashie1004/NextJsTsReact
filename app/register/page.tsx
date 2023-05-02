@@ -1,7 +1,12 @@
+'use client'
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
+import { Data } from '../context'
+import { useContext } from 'react'
 
 export default function page() {
+  const {loggedIn, setLoggedIn} = useContext(Data)
+
   return <>
     <Header />
     <main>
