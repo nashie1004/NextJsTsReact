@@ -1,95 +1,73 @@
-import Image from 'next/image'
-import styles from './page.module.css'
+'use client'
+import { useContext } from "react"
+import { Data } from "./context"
 
-export default function Home() {
-  return (
-    <main className={styles.main}>
-      <div className={styles.description}>
-        <p>
-          Get started by editing&nbsp;
-          <code className={styles.code}>app/page.tsx</code>
-        </p>
-        <div>
-          <a
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            By{' '}
-            <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className={styles.vercelLogo}
-              width={100}
-              height={24}
-              priority
-            />
-          </a>
-        </div>
-      </div>
+export default function Page() {
+  const {hi} = useContext(Data)
+  // console.log(hi)
 
-      <div className={styles.center}>
-        <Image
-          className={styles.logo}
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
-        />
-      </div>
-
-      <div className={styles.grid}>
-        <a
-          href="https://beta.nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Docs <span>-&gt;</span>
-          </h2>
-          <p>Find in-depth information about Next.js features and API.</p>
-        </a>
-
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Learn <span>-&gt;</span>
-          </h2>
-          <p>Learn about Next.js in an interactive course with&nbsp;quizzes!</p>
-        </a>
-
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Templates <span>-&gt;</span>
-          </h2>
-          <p>Explore the Next.js 13 playground.</p>
-        </a>
-
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Deploy <span>-&gt;</span>
-          </h2>
-          <p>
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
-      </div>
+  return <>
+    <header>
+      LOGO,
+      SHOPPING CART,
+      SIGN IN,
+      SIGN OUT
+    </header>
+    <main>
+      main
+      <p>Lorem, ipsum.</p>
+      <p>Eum, nam.</p>
+      <p>Molestias, vero?</p>
+      <p>Iusto, fuga.</p>
+      <p>Nemo, velit?</p>
+      <p>Ipsam, laboriosam?</p>
+      <p>Omnis, illo!</p>
+      <p>Distinctio, repudiandae!</p>
+      <p>Incidunt, nostrum.</p>
+      <p>Eos, minima?</p>
+      <p>Est, minima?</p>
+      <p>Facere, id!</p>
+      <p>Obcaecati, libero.</p>
+      <p>Rem, non.</p>
+      <p>Nihil, perferendis.</p>
+      <p>Quos, ducimus.</p>
+      <p>Explicabo, doloribus?</p>
+      <p>Maiores, molestias!</p>
+      <p>Doloremque, sint.</p>
+      <p>Nam, facere.</p>
+      <p>Atque, ut!</p>
+      <p>Animi, est?</p>
+      <p>Earum, esse.</p>
+      <p>Expedita, asperiores!</p>
+      <p>Laudantium, nisi.</p>
+      <p>Facere, eligendi.</p>
+      <p>Doloremque, dolore?</p>
+      <p>Possimus, explicabo?</p>
+      <p>Deleniti, qui.</p>
+      <p>Consectetur, consequuntur.</p>
+      <p>Excepturi, fugiat.</p>
+      <p>Enim, molestias.</p>
+      <p>Illum, distinctio!</p>
+      <p>Autem, tenetur.</p>
+      <p>Dignissimos, maiores.</p>
+      <p>Recusandae, veniam!</p>
+      <p>Dolore, doloremque?</p>
+      <p>Quae, quod.</p>
+      <p>Consectetur, rerum.</p>
+      <p>Ullam, doloribus.</p>
+      <p>Possimus, facere.</p>
+      <p>Tempora, porro.</p>
+      <p>A, maiores.</p>
+      <p>Officiis, saepe.</p>
+      <p>Praesentium, necessitatibus?</p>
+      <p>Officiis, iure!</p>
+      <p>Maiores, pariatur.</p>
+      <p>Vitae, quis.</p>
+      <p>Maiores, quo!</p>
+      <p>Fugit, veniam?</p>
     </main>
-  )
+    <footer>
+      footer
+    </footer>
+  </>
 }
