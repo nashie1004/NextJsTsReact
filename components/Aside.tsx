@@ -39,6 +39,9 @@ export default function Aside() {
         <p>
           <Link href='/login'>Login</Link>
         </p>
+        <div className="shops">
+          
+        </div>
       </>
     }
   </aside>
