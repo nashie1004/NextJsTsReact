@@ -1,9 +1,12 @@
 'use client'
+import { Data } from "@/app/context"
+import { useContext } from "react"
 
 export default function Card() {
+    const {modal} = useContext(Data)
 
     function toggleModal(){
-        alert(1)
+        modal.current.classList.toggle('showModal')
     }
 
   return <div className="children" onClick={toggleModal}>

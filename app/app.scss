@@ -8,6 +8,8 @@ $grayFont: rgb(145, 182, 173);
 $whitesmoke: whitesmoke;
 $lightgrey: rgb(231, 225, 225);
 $red: rgb(179, 106, 106);
+$opacityGrey: rgba(145, 182, 173, 0.15);
+$opacityDarkGrey: rgba(76, 83, 116, 0.7);
 
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400&display=swap');
 
@@ -199,6 +201,35 @@ main{
           }
         }
       }
+    }
+
+    .grey-bg{
+      z-index: 6;
+      background: $opacityDarkGrey;
+      position: fixed;
+      width: 100%;
+      min-height: 100%;
+      top: 0;
+      left: 0;
+      place-items: center;
+      display: none; ///
+
+      .modal{
+        border-radius: .4rem;
+        z-index: 7;
+        margin-inline: 1rem;
+        width: clamp(90%, 200px, 50%);
+        height: clamp(80%, 250px, 30%);
+        background: $white;
+
+        button{
+          background: $blackish;
+        }
+      }
+    }
+
+    .showModal{
+      display: grid !important;
     }
   }
 
