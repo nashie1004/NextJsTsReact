@@ -73,6 +73,7 @@ header{
     font-size: 1.7rem;
     font-weight: bold;
     color: $red;
+    white-space: nowrap;
   }
 
   .search-input{
@@ -86,6 +87,7 @@ header{
     border: none !important;
     background: $blackish;
     margin-right: auto;
+    padding: .7rem;
   }
 
   .sidebar-btn{
@@ -100,6 +102,7 @@ header{
       background: rgba(128, 128, 128, .25);
     }
   }
+
 }
 main{
   min-height: calc(100vh - 70px);
@@ -234,9 +237,10 @@ footer{
   }
 }
 
-@media only screen and (max-width: 500px) {
+@media only screen and (max-width: 600px) {
   header{
-    flex-wrap: wrap;
-    min-height: 60px;
+    .disappeanOn500Px{
+      display: none;
+    }
   }
 }
