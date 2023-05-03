@@ -69,6 +69,19 @@ body{
     margin-right: auto;
     padding: .7rem;
   }
+  
+  .sidebar-btn{
+    padding: .6rem;
+    cursor: pointer;
+    border-radius: 50%;
+    width: 40px;
+    display: grid;
+    place-items: center;
+
+    &:hover{
+      background: rgba(128, 128, 128, .25);
+    }
+  }
 }
 
 header{
@@ -81,7 +94,6 @@ header{
   gap: 1rem;
   background: $white;
   z-index: 4;
-  // box-shadow: 0px 5px 6px 3px rgba(0,0,0,0.15);
   border-bottom: 1px solid $lightgrey;
 
   .logo{
@@ -90,19 +102,6 @@ header{
     font-weight: bold;
     color: $red;
     white-space: nowrap;
-  }
-
-  .sidebar-btn{
-    padding: .6rem;
-    cursor: pointer;
-    border-radius: 50%;
-    width: 40px;
-    display: grid;
-    place-items: center;
-
-    &:hover{
-      background: rgba(128, 128, 128, .25);
-    }
   }
 
 }
@@ -136,9 +135,7 @@ main{
       grid-auto-flow: column;
       grid-auto-columns: 60px;
       
-      // white-space: nowrap;
       .filters-children{
-        // display: inline-block;
         width: 60px;
         cursor: pointer;
 
@@ -169,6 +166,7 @@ main{
         display: grid;
         grid-template-rows: auto 1fr;
         overflow: hidden;
+        cursor: pointer;
   
         img{
           width: 100%;
@@ -212,19 +210,45 @@ main{
       top: 0;
       left: 0;
       place-items: center;
-      display: none; ///
+      display: none;
 
       .modal{
         border-radius: .4rem;
         z-index: 7;
         margin-inline: 1rem;
-        width: clamp(90%, 200px, 50%);
-        height: clamp(80%, 250px, 30%);
+        width: clamp(70%, 200px, 50%);
+        min-height: clamp(60%, 250px, 20%);
         background: $white;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+        align-items: center;
+        gap: 1.5rem;
+        padding: 1rem;
+        position: relative;
 
-        button{
-          background: $blackish;
+        img{
+          object-fit: cover;
+          height: 100%;
+          width: 50%;
+          aspect-ratio: 1 / 1;
         }
+
+        .modal-info{
+          flex: 1;
+          min-width: 300px;
+          min-height: 100%;
+          outline: 1px dashed $lightblue;
+
+          button{
+            background: $blackish;
+          }
+        }
+      }
+      .modal-close{
+        position: absolute;
+        right: .5rem;
+        top: .5rem;
       }
     }
 
@@ -262,7 +286,7 @@ main{
       background: $grayish;
     }
     div{
-      display: flex;
+      display: none;
       gap: 1rem;
 
       input{
@@ -299,6 +323,20 @@ footer{
   header{
     .disappeanOn500Px{
       display: none;
+    }
+  }
+  main{
+    section{
+      .grey-bg{
+        .modal{
+          width: clamp(90%, 200px, 50%);
+        }
+      }
+    }
+  }
+  aside{
+    div{
+      display: flex !important;
     }
   }
 }
