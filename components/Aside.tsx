@@ -1,13 +1,27 @@
 'use client'
 import { Data } from "@/app/context"
 import { useContext } from "react"
+import { useRouter } from 'next/navigation';
 
 export default function Aside() {
-  const {aside, loggedIn} = useContext(Data);
+  const {aside, loggedIn, setLoggedIn} = useContext(Data);
+  const router = useRouter();
 
-return <aside ref={aside}>
-  {
-    loggedIn ? <p>Logged In</p> : <p>Not Log in</p>
+  function signOut(){
+    router.push('/register')
+    setLoggedIn(false)
   }
+
+  return <aside ref={aside}>
+    {
+      loggedIn ? <>
+        <button onClick={signOut}>Log out</button>
+        <div className="shops">
+          
+        </div>
+      </> : <>
+        <p>Not Log in</p>
+      </>
+    }
   </aside>
 }

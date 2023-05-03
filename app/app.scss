@@ -5,6 +5,8 @@ $white: white;
 $grayish: rgb(76, 83, 116);
 $lightblue: dodgerblue;
 $grayFont: rgb(145, 182, 173);
+$whitesmoke: whitesmoke;
+
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400&display=swap');
 
 *{
@@ -70,6 +72,18 @@ header{
     color: $limegreen;
   }
 
+  .search-input{
+    outline: none !important;
+    border: none !important;
+    background: $whitesmoke;
+  }
+  .search-btn{
+    outline: none !important;
+    border: none !important;
+    background: $blackish;
+    margin-right: auto;
+  }
+
   .sidebar-btn{
     padding: .6rem;
     cursor: pointer;
@@ -77,10 +91,9 @@ header{
     width: 40px;
     display: grid;
     place-items: center;
-    background: rgba(128, 128, 128, .3);
 
     &:hover{
-      background: rgba(128, 128, 128, .45);
+      background: rgba(128, 128, 128, .25);
     }
   }
 }
@@ -91,6 +104,7 @@ main{
 
   section{
     flex: 1;
+    padding: 1.5rem;
 
     .main-img{
       border-radius: 1rem;
@@ -99,18 +113,27 @@ main{
       aspect-ratio: 16 / 9;
       box-shadow: 0px 0px 15px 9px rgba(0, 0,0,0.25);
     }
-  
+    
+    .filter-results{
+      .filters-children{
+        p{
+          font-size: .9rem;
+          color: $grayFont;
+          font-weight: bold;
+        }
+      }
+    }
+
     .search-results{
       display: grid;
       grid-auto-rows: 320px;
-      grid-template-columns: repeat(auto-fit, 250px);
-      gap: 1.2rem;
+      grid-template-columns: repeat(auto-fit, 240px);
+      gap: 1.5rem;
       justify-content: center;
       margin-top: 1rem;
   
       .children{
         border-radius: .8rem;
-        box-shadow: 0px 0px 10px 3px rgba(0, 0,0,0.25);
         display: grid;
         grid-template-rows: auto 1fr;
         overflow: hidden;
@@ -119,7 +142,7 @@ main{
           width: 100%;
           aspect-ratio: 1 / 1;
           object-fit: cover;
-          border-radius: .8rem .8rem 0rem 0;
+          border-radius: .8rem;
           transition: transform .35s ease-in-out;
   
           &:hover{
@@ -130,13 +153,19 @@ main{
           z-index: 2;
           border-radius: 0 0rem .8rem .8rem;
           display: grid;
-          padding: .5rem;
-          place-items: center;
-          border-bottom: 2px solid $limegreen;
+          padding-top: .5rem;
           background: $white;
-  
-          h3{
-            text-align: center;
+
+          p{
+            color: $grayFont;
+            font-weight: bold;
+            display: flex;
+            font-size: .9rem;
+
+            h3{
+              margin-left: auto;
+              font-weight: bold;
+            }
           }
         }
       }
@@ -144,19 +173,24 @@ main{
   }
 
   .showAside{
-    transform: translateX(310px);
+    transform: translateX(-310px);
   }
   aside{
     transition: transform .24s ease-in-out;
     position: absolute;
     height: 100%;
-    right: 0;
+    right: -310px;
     z-index: 3;
     width: clamp(10%, 100%, 310px);
-    background: $blackish;
+    background: $whitesmoke;
+    padding: 1rem;
 
-    p{
-      color: $white;
+    button{
+      background: $grayish;
+    }
+    .shops{
+      background: $white;
+      min-height: 300px;
     }
   }
 }

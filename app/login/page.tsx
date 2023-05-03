@@ -12,7 +12,7 @@ export default function page() {
 
   function submitLoginForm(e: any): void{
     e.preventDefault()
-    router.push('/')
+    router.push('/search')
     setLoggedIn(true)
   }
 
