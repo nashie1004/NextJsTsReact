@@ -6,6 +6,8 @@ $grayish: rgb(76, 83, 116);
 $lightblue: dodgerblue;
 $grayFont: rgb(145, 182, 173);
 $whitesmoke: whitesmoke;
+$lightgrey: rgb(231, 225, 225);
+$red: rgb(179, 106, 106);
 
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400&display=swap');
 
@@ -20,7 +22,7 @@ $whitesmoke: whitesmoke;
 body{
   min-height: 100vh;
   display: grid;
-  grid-template-rows: min(60px) 1fr 100px;
+  grid-template-rows: min(70px) 1fr 100px;
   overflow-x: hidden;
 
   next-route-announcer{
@@ -56,7 +58,6 @@ body{
 header{
   position: sticky;
   top: 0;
-  box-shadow: 0px 5px 6px 3px rgba(0,0,0,0.15);
   display: flex;
   align-items: center;
   justify-content: flex-end;
@@ -64,12 +65,14 @@ header{
   gap: 1rem;
   background: $white;
   z-index: 4;
+  // box-shadow: 0px 5px 6px 3px rgba(0,0,0,0.15);
+  border-bottom: 1px solid $lightgrey;
 
   .logo{
     margin-right: auto;
     font-size: 1.7rem;
     font-weight: bold;
-    color: $limegreen;
+    color: $red;
   }
 
   .search-input{
@@ -77,6 +80,7 @@ header{
     border: none !important;
     background: $whitesmoke;
   }
+
   .search-btn{
     outline: none !important;
     border: none !important;
@@ -98,13 +102,14 @@ header{
   }
 }
 main{
-  min-height: calc(100vh - 60px);
+  min-height: calc(100vh - 70px);
   position: relative;
-  display: flex;
+  display: grid;
+  grid-template-columns: 1fr;
 
   section{
-    flex: 1;
-    padding: 1.5rem;
+    padding: 1rem;
+    display: grid;
 
     .main-img{
       border-radius: 1rem;
@@ -115,11 +120,33 @@ main{
     }
     
     .filter-results{
+      overflow-x: auto !important;
+      gap: 1rem;
+      padding: 1rem 2.2rem;
+      padding-top: 0;
+      border-bottom: 1px solid $whitesmoke;
+      width: 100%;
+
+      display: grid;
+      grid-auto-flow: column;
+      grid-auto-columns: 60px;
+      
+      // white-space: nowrap;
       .filters-children{
+        // display: inline-block;
+        width: 60px;
+        cursor: pointer;
+
+        h4, svg{
+          margin-left: 40%;
+          color: $grayFont;
+          text-align: center;
+        }
         p{
           font-size: .9rem;
           color: $grayFont;
           font-weight: bold;
+          text-align: center;
         }
       }
     }
@@ -173,13 +200,13 @@ main{
   }
 
   .showAside{
-    transform: translateX(-310px);
+    transform: translateX(310px);
   }
   aside{
     transition: transform .24s ease-in-out;
     position: absolute;
     height: 100%;
-    right: -310px;
+    left: -310px;
     z-index: 3;
     width: clamp(10%, 100%, 310px);
     background: $whitesmoke;

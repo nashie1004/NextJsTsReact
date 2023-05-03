@@ -2,7 +2,7 @@ import Header from '@/components/Header'
 import Footer from '@/components/Footer'
 import Card from '@/components/Card'
 import Aside from '@/components/Aside'
-import { FaInstagram } from "react-icons/fa";
+import Filters from '@/components/Filters'
 
 export default function page() {
   return <>
@@ -10,10 +10,29 @@ export default function page() {
     <main>
       <section>
         <div className="filter-results">
-          <div className="filters-children">
-            <FaInstagram />
-            <p>Lorem, ipsum.</p>
-          </div>
+          <Filters />
+          <Filters />
+          
+          <Filters />
+          <Filters />
+          <Filters />
+          <Filters />
+          <Filters />
+          <Filters />
+          <Filters />
+          <Filters />
+          <Filters />
+          <Filters />
+          <Filters />
+          <Filters />
+          <Filters />
+          <Filters />
+          <Filters />
+          <Filters />
+          <Filters />
+          <Filters />
+          <Filters />
+          <Filters />
         </div>
         <div className="search-results">
           <Card />
