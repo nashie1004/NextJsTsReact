@@ -16,17 +16,22 @@ export default function Aside() {
   return <aside ref={aside}>
     {
       loggedIn ? <>
+        <div>
+          <input className="search-input" type="text" placeholder='Search food' />
+          <button className="search-btn">
+            O
+          </button>
+        </div>
         <button onClick={signOut}>Log out</button>
         <p>
-          <Link href='/search'>Search</Link>
+          <Link href='/search'>Search Page</Link>
         </p>
         <div className="shops">
           
         </div>
       </> : <>
-        <p>Not Log in</p>
         <p>
-          <Link href='/search'>Search</Link>
+          <Link href='/search'>Search Page</Link>
         </p>
         <p>
           <Link href='/register'>Register</Link>

@@ -53,6 +53,20 @@ body{
       outline: 2px solid $lightblue;
     }
   }
+  
+  .search-input{
+    outline: none !important;
+    border: none !important;
+    background: $whitesmoke;
+  }
+
+  .search-btn{
+    outline: none !important;
+    border: none !important;
+    background: $blackish;
+    margin-right: auto;
+    padding: .7rem;
+  }
 }
 
 header{
@@ -74,20 +88,6 @@ header{
     font-weight: bold;
     color: $red;
     white-space: nowrap;
-  }
-
-  .search-input{
-    outline: none !important;
-    border: none !important;
-    background: $whitesmoke;
-  }
-
-  .search-btn{
-    outline: none !important;
-    border: none !important;
-    background: $blackish;
-    margin-right: auto;
-    padding: .7rem;
   }
 
   .sidebar-btn{
@@ -214,11 +214,38 @@ main{
     width: clamp(10%, 100%, 310px);
     background: $whitesmoke;
     padding: 1rem;
+    display: grid;
+    gap: 1rem;
+    align-content: flex-start;
 
+    p{
+      text-align: center;
+      padding: .7rem;
+
+      &:hover{
+        background: rgba(145, 182, 173, 0.15);
+      }
+    }
     button{
+      height: 40px;
       background: $grayish;
     }
+    div{
+      display: flex;
+      gap: 1rem;
+
+      input{
+        flex: 1;
+        height: 40px;
+        background: $white !important;
+      }
+      button{
+        height: 40px;
+        background: $grayish;
+      }
+    }
     .shops{
+      margin-top: 1rem;
       background: $white;
       min-height: 300px;
     }
@@ -238,6 +265,7 @@ footer{
 }
 
 @media only screen and (max-width: 600px) {
+  
   header{
     .disappeanOn500Px{
       display: none;

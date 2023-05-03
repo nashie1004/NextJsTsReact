@@ -27,8 +27,8 @@ export default function Header() {
           {
             showSearchBar && (
               <>
-                <input className="search-input" type="text" placeholder='Search food' />
-                <button className="search-btn">
+                <input className="search-input disappeanOn500Px" type="text" placeholder='Search food' />
+                <button className="search-btn disappeanOn500Px">
                   O
                 </button>
               </>
