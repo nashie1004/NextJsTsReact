@@ -247,7 +247,7 @@ main{
     .shops{
       margin-top: 1rem;
       background: $white;
-      min-height: 300px;
+      min-height: 500px;
     }
   }
 }
@@ -265,7 +265,6 @@ footer{
 }
 
 @media only screen and (max-width: 600px) {
-  
   header{
     .disappeanOn500Px{
       display: none;

@@ -9,6 +9,9 @@ export default function page() {
     <Header />
     <main>
       <section>
+        <div className="grey-bg">
+          <div className="modal">modal</div>
+        </div>
         <div className="filter-results">
           <Filters />
           <Filters />

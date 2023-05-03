@@ -20,23 +20,24 @@ export default function Header() {
     <Link href='/' className="logo">FOOD APP</Link>
     <>
       {
+        showSearchBar && (
+          <>
+            <input className="search-input disappeanOn500Px" type="text" placeholder='Search food' />
+            <button className="search-btn disappeanOn500Px">
+              O
+            </button>
+          </>
+        )
+      }
+      {
         !loggedIn ? <>
           <Link href='/register' className="disappeanOn500Px">Register</Link>
           <Link href='/login' className="disappeanOn500Px">Login</Link>
         </> : <>
-          {
-            showSearchBar && (
-              <>
-                <input className="search-input disappeanOn500Px" type="text" placeholder='Search food' />
-                <button className="search-btn disappeanOn500Px">
-                  O
-                </button>
-              </>
-            )
-          }
           <Link href='/search' className="disappeanOn500Px">Search</Link>
         </>
       }
+      
       <span className="sidebar-btn" onClick={() => aside.current.classList.toggle('showAside')}>
         <AiOutlineMenu />
       </span>

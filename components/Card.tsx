@@ -1,6 +1,12 @@
+'use client'
+
 export default function Card() {
 
-  return <div className="children">
+    function toggleModal(){
+        alert(1)
+    }
+
+  return <div className="children" onClick={toggleModal}>
         <img src="https://picsum.photos/id/237/800/800" alt="" />
         <div className="card-info">
             <h3>Lorem ipsum dolor sit amet.</h3>

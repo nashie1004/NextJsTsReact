@@ -14,14 +14,14 @@ export default function Aside() {
   }
 
   return <aside ref={aside}>
+    <div>
+      <input className="search-input" type="text" placeholder='Search food' />
+      <button className="search-btn">
+        O
+      </button>
+    </div>
     {
       loggedIn ? <>
-        <div>
-          <input className="search-input" type="text" placeholder='Search food' />
-          <button className="search-btn">
-            O
-          </button>
-        </div>
         <button onClick={signOut}>Log out</button>
         <p>
           <Link href='/search'>Search Page</Link>
