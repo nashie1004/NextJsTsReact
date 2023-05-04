@@ -43,6 +43,9 @@ export default function Aside() {
         <p>
           <Link href='/cart'>Cart Page</Link>
         </p>
+        <p>
+          <Link href='/history'>History Page</Link>
+        </p>
       </> : <>
         <p>
           <Link href='/search'>Search Page</Link>

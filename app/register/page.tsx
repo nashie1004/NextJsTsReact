@@ -12,7 +12,9 @@ export default function page() {
 
   function submitRegisterForm(e: any): void{
     e.preventDefault()
-    router.push('/login')
+    if (name !== '' && password !== ''){
+      router.push('/login')
+    }
   }
 
   return <>
@@ -21,8 +23,12 @@ export default function page() {
       <section>
         <form onSubmit={submitRegisterForm}>
           <h1>Get Started</h1>
-          <input type="text" placeholder='Username' />
-          <input type="text" placeholder='Password' />
+          <input
+            onChange={e => setName(e.target.value)}
+           type="text" placeholder='Username' />
+          <input 
+            onChange={e => setPassword(e.target.value)}
+          type="text" placeholder='Password' />
           <button>Register</button>
         </form>
       </section>

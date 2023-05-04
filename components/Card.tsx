@@ -13,7 +13,7 @@ export default function Card() {
         <img src="https://picsum.photos/id/237/800/800" alt="" />
         <div className="card-info">
             <h3>Lorem ipsum dolor sit amet.</h3>
-            <p>Lorem, ipsum dolor. <h3>$100.00</h3></p>
+            <p>Lorem, ipsum dolor. <span>$100.00</span></p>
         </div>
     </div>
 }

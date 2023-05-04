@@ -38,6 +38,7 @@ export default function Header() {
         </> : <>
           <Link href='/search' className="disappeanOn500Px">Search</Link>
           <Link href='/cart' className="disappeanOn500Px">Cart</Link>
+          <Link href='/history' className="disappeanOn500Px">History</Link>
         </>
       }
       
