@@ -276,7 +276,6 @@ main{
       display: flex;
       gap: 1rem;
       flex-wrap: wrap;
-      border: 1px solid $grayFont;
       
       h1{
         padding-bottom: 1rem;
@@ -293,7 +292,6 @@ main{
         display: grid;
         align-content: flex-start;
         gap: 1rem;
-        border: 1px dashed $grayFont;
 
         p, h3{
           display: flex;
@@ -311,7 +309,6 @@ main{
         
         .shoppingCard{
           display: flex;
-          border: 1px dashed $lightgrey;
           padding: .6rem;
           position: relative;
           min-width: 50%;
@@ -327,15 +324,20 @@ main{
   
           .shoppingInfo{
             flex: .8;
-            outline: 1px dashed $black;
+            display: grid;
+            align-content: space-between;
 
             .actions{
               display: flex;
+              width: 150px;
 
               button{
                 background: $blackish;
+                width: 50px;
               }
-              span{
+              div{
+                width: 50px;
+                font-size: 1.2rem;
                 display: grid;
                 place-items: center;
               }
