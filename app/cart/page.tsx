@@ -3,12 +3,24 @@ import Header from '@/components/Header'
 import Footer from '@/components/Footer'
 import Aside from '@/components/Aside'
 import ShoppingCard from '@/components/ShoppingCard'
+import NotLoggedIn from '@/components/NotLoggedIn'
 import { Data } from '../context'
 import { useContext } from 'react'
 
 export default function page() {
   const {loggedIn} = useContext(Data)
   
+  if (!loggedIn) return <>
+    <Header />
+    <main>
+      <section>
+        <NotLoggedIn />
+      </section>
+      <Aside />
+    </main>
+    <Footer />
+  </>
+
   function submitCarts(): void{
     alert(2)
   }

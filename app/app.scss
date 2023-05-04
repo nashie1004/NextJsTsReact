@@ -92,7 +92,7 @@ body{
   display: grid;
   place-content: center;
   p{
-    font-size: 2rem;
+    font-size: 1.5rem;
   }
 }
 
@@ -127,6 +127,17 @@ main{
   section{
     padding: 1rem;
     display: grid;
+
+    // not logged in
+    .notLoggedIn{
+      height: 100%;
+      display: grid;
+      place-content: center;
+
+      p{
+        font-size: 1.5rem;
+      }
+    }
 
     // home page
     article{

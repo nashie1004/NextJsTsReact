@@ -28,7 +28,7 @@ export default function Header() {
     <Link href='/' className="logo">FOOD APP</Link>
     <>
       {
-        (onSearchPage) && (
+        (onSearchPage && loggedIn) && (
           <>
             <input 
             onChange={e => setSearchValue(e.target.value)}

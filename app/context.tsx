@@ -7,6 +7,7 @@ interface ValueType {
   setLoggedIn: Dispatch<SetStateAction<boolean>> | null
   aside: HTMLElement | MutableRefObject<null>,
   modal: HTMLElement | MutableRefObject<null>
+  user: 'testDummyObject' | null
 }
 
 export const Data = createContext({} as any);
@@ -16,7 +17,7 @@ export default function Context({children}: any) {
   const aside = useRef(null)
   const modal = useRef(null)
 
-  const value: ValueType = {loggedIn, setLoggedIn, aside, modal};
+  const value: ValueType = {loggedIn, setLoggedIn, aside, modal, user: null};
 
   return (
     <Data.Provider value={value}>
