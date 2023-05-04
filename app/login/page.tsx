@@ -17,6 +17,8 @@ export default function page() {
     if (name !== '' && password !== ''){
       router.push('/search')
       setLoggedIn(true)
+    } else {
+      alert('Invalid name or password')
     }
   }
 

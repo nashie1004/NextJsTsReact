@@ -14,6 +14,8 @@ export default function page() {
     e.preventDefault()
     if (name !== '' && password !== ''){
       router.push('/login')
+    } else {
+      alert('Invalid name or password')
     }
   }
 

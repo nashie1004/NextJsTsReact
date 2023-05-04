@@ -7,7 +7,7 @@ import { AiOutlineMenu } from 'react-icons/ai'
 export default function Header() {
   const {loggedIn, aside} = useContext(Data);
   const [onSearchPage, setOnSearchPage] = useState<boolean>(false)
-
+  const [searchValue, setSearchValue] = useState<string>('')
 
   useEffect(() => {
     const url: string = new URL(window.location.href).pathname.toString()
@@ -18,14 +18,22 @@ export default function Header() {
     }
   }, [])
 
+  function btnSearchFood():void{
+    if (searchValue !== ''){
+      alert(10)
+    }
+  }
+
   return <header>
     <Link href='/' className="logo">FOOD APP</Link>
     <>
       {
         (onSearchPage) && (
           <>
-            <input className="search-input disappeanOn500Px" type="text" placeholder='Search food' />
-            <button className="search-btn disappeanOn500Px">
+            <input 
+            onChange={e => setSearchValue(e.target.value)}
+            className="search-input disappeanOn500Px" type="text" placeholder='Search food' />
+            <button onClick={btnSearchFood} className="search-btn disappeanOn500Px">
               O
             </button>
           </>

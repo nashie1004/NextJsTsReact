@@ -8,6 +8,7 @@ export default function Aside() {
   const {aside, loggedIn, setLoggedIn} = useContext(Data);
   const router = useRouter();
   const [onSearchPage, setOnSearchPage] = useState<boolean>(false)
+  const [searchValue, setSearchValue] = useState<string>('')
 
   function signOut(){
     router.push('/register')
@@ -23,12 +24,20 @@ export default function Aside() {
     }
   }, [])
 
+  function btnSearchFood():void{
+    if (searchValue !== ''){
+      alert(10)
+    }
+  }
+
   return <aside ref={aside}>
     {
       (onSearchPage) && (
         <div>
-          <input className="search-input" type="text" placeholder='Search food' />
-          <button className="search-btn">
+          <input 
+            onChange={e => setSearchValue(e.target.value)}
+          className="search-input" type="text" placeholder='Search food' />
+          <button onClick={btnSearchFood} className="search-btn">
             O
           </button>
         </div>
