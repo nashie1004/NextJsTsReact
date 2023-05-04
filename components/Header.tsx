@@ -2,17 +2,19 @@
 import Link from "next/link"
 import { Data } from "@/app/context"
 import { useContext, useEffect, useState } from "react"
-import { AiOutlineMenu, AiOutlineSearch } from 'react-icons/ai'
+import { AiOutlineMenu } from 'react-icons/ai'
 
 export default function Header() {
   const {loggedIn, aside} = useContext(Data);
-  const [showSearchBar, setShowSearchBar] = useState(false)
+  const [onSearchPage, setOnSearchPage] = useState<boolean>(false)
+
 
   useEffect(() => {
-    if (new URL(window.location.href).pathname.toString() === '/search'){
-      setShowSearchBar(true)
+    const url: string = new URL(window.location.href).pathname.toString()
+    if (url === '/search'){
+      setOnSearchPage(true)
     } else {
-      setShowSearchBar(false)
+      setOnSearchPage(false)
     }
   }, [])
 
@@ -20,7 +22,7 @@ export default function Header() {
     <Link href='/' className="logo">FOOD APP</Link>
     <>
       {
-        showSearchBar && (
+        (onSearchPage) && (
           <>
             <input className="search-input disappeanOn500Px" type="text" placeholder='Search food' />
             <button className="search-btn disappeanOn500Px">
@@ -35,6 +37,7 @@ export default function Header() {
           <Link href='/login' className="disappeanOn500Px">Login</Link>
         </> : <>
           <Link href='/search' className="disappeanOn500Px">Search</Link>
+          <Link href='/cart' className="disappeanOn500Px">Cart</Link>
         </>
       }
       

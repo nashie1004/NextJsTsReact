@@ -2,9 +2,13 @@
 import { AiOutlineMenu } from 'react-icons/ai'
 
 export default function Filters() {
-  return <div className="filters-children">
-    {/* <h4>LOGO</h4> */}
+  
+  function enableSelectedFilter(): void{
+    alert(1)
+  }
+  
+  return <div onClick={enableSelectedFilter} className="filters-children">
     <AiOutlineMenu />
     <p>Lorem.</p>
-</div>
+  </div>
 }

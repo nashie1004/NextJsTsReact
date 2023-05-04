@@ -271,6 +271,92 @@ main{
     .showModal{
       display: grid !important;
     }
+
+    .shoppingCartContainer{
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+      border: 1px solid $grayFont;
+      
+      h1{
+        padding-bottom: 1rem;
+        border-bottom: 1px solid $lightgrey;
+        margin-bottom: 1rem;
+      }
+
+      .shoppingTransaction{
+        position: sticky;
+        top: calc(60px + 1.5rem);
+        height: 300px;
+        padding: 1rem;
+        flex: .3;
+        display: grid;
+        align-content: flex-start;
+        gap: 1rem;
+        border: 1px dashed $grayFont;
+
+        p, h3{
+          display: flex;
+          justify-content: space-between;
+        }
+
+        button{
+          background: $blackish;
+        }
+      }
+      .shoppingCards{
+        flex: .7;
+        min-width: 350px;
+        padding: 1rem;
+        
+        .shoppingCard{
+          display: flex;
+          border: 1px dashed $lightgrey;
+          padding: .6rem;
+          position: relative;
+          min-width: 50%;
+          gap: 1rem;
+          margin-bottom: 1.5rem;
+          
+          img{
+            max-width: 20%;
+            flex: .2;
+            aspect-ratio: 1 / 1;
+            object-fit: cover;
+          }
+  
+          .shoppingInfo{
+            flex: .8;
+            outline: 1px dashed $black;
+
+            .actions{
+              display: flex;
+
+              button{
+                background: $blackish;
+              }
+              span{
+                display: grid;
+                place-items: center;
+              }
+              button:last-of-type{
+                color: $blackish;
+                background: $opacityGrey;
+              }
+            }
+          }
+
+          .price{
+            top: .6rem;
+            right: .6rem;
+            position: absolute;
+            background: $white;
+            color: $red;
+          }
+        }
+
+      }
+    }
   }
 
   .showAside{
@@ -315,11 +401,6 @@ main{
         background: $grayish;
       }
     }
-    .shops{
-      margin-top: 1rem;
-      background: $white;
-      min-height: 500px;
-    }
   }
 }
 footer{
@@ -346,6 +427,19 @@ footer{
       .grey-bg{
         .modal{
           width: clamp(90%, 200px, 50%);
+        }
+      }
+
+      .shoppingCartContainer{
+        gap: 0rem;
+
+        .shoppingTransaction{
+          position: static;
+          min-width: 100%;
+        }
+        .shoppingCards{
+          min-width: 100%;
+          // display: none;
         }
       }
     }

@@ -7,7 +7,7 @@ import { useContext } from 'react'
 import { useRouter } from 'next/navigation';
 
 export default function page() {
-  const {loggedIn, setLoggedIn} = useContext(Data)
+  const {setLoggedIn} = useContext(Data)
   const router = useRouter();
 
   function submitLoginForm(e: any): void{
